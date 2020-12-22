@@ -52,12 +52,13 @@ jobs:
     steps:
     - name: executing remote ssh commands to deploy
       uses: appleboy/ssh-action@master
-      with:
+        with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USER }}
         key: ${{ secrets.SSH_KEY }}
         #passphrase: ${{ secrets.PASSPHRASE }} # если ваш ssh-ключ защищен фразой-паролем
         script: |
-          sudo docker pull tsaplinale/flask_app_test
+          sudo docker pull <имя-пользователя>/<имя-репозитория>
           sudo docker stop $(sudo docker ps -a -q)
-          sudo docker run --rm -d -p 5000:5000 tsaplinale/flask_app_test
+          sudo docker run --rm -d -p 5000:5000 <имя-пользователя>/<имя-репозитория>
+ 
