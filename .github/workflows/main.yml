@@ -54,9 +54,9 @@ jobs:
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.HOST }}
-        username: ${{ secrets.tsaplinaleone }}
+        username: ${{ secrets.USER }}
         key: ${{ secrets.SSH_KEY }}
-        passphrase: ${{ secrets.PASSPHRASE }} #если ваш ssh-ключ защищен фразой-паролем
+        passphrase: ${{ secrets.PASSPHRASE }}
         script: |
           sudo docker pull tsaplinale/flask_app_test
           sudo docker stop $(sudo docker ps -a -q)
