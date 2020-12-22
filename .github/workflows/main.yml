@@ -53,9 +53,44 @@ jobs:
     - name: executing remote ssh commands to deploy
       uses: appleboy/ssh-action@master
       with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USER }}
-        key: ${{ secrets.SSH_KEY }}
+        host: ${{ secrets. 130.193.59.140}}
+        username: ${{ secrets.tsaplinaleone }}
+        key: ${{ secrets.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 }}
         #passphrase: ${{ secrets.PASSPHRASE }} если ваш ssh-ключ защищен фразой-паролем
         script: |
           sudo docker pull <имя-пользователя>/<имя-репозитория>
