@@ -57,7 +57,7 @@ jobs:
         username: ${{ secrets.USER }}
         key: ${{ secrets.SSH_KEY }}
         passphrase: ${{ secrets.PASSPHRASE }}
-        script:
+        script: |
           sudo docker pull tsaplinale/flask_app_test
           sudo docker stop $(sudo docker ps -a -q)
           sudo docker run --rm -d -p 5000:5000 tsaplinale/flask_app_test
