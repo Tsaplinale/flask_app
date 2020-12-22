@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
-    return 'Решено! ВМ взяли новую, добавили authorized_keys, устновили докер в ВМ'
+    return 'Получилось все же, круть!!'
 '
 
 
