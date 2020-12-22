@@ -45,18 +45,18 @@ jobs:
         with:
           push: true
           tags: tsaplinale/flask_app_test:latest
-    
+  
   deploy:
     runs-on: ubuntu-latest
     needs: build_and_push_to_docker_hub
     steps:
     - name: executing remote ssh commands to deploy
       uses: appleboy/ssh-action@master
-        with:
+      with:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USER }}
         key: ${{ secrets.SSH_KEY }}
-        #passphrase: ${{ secrets.PASSPHRASE }} # если ваш ssh-ключ защищен фразой-паролем
+        passphrase: ${{ secrets.PASSPHRASE }} # если ваш ssh-ключ защищен фразой-паролем
         script: |
           sudo docker pull <имя-пользователя>/<имя-репозитория>
           sudo docker stop $(sudo docker ps -a -q)
