@@ -56,7 +56,7 @@ jobs:
        host: ${{ secrets.HOST }}
        username: ${{ secrets.USER }}
        key: ${{ secrets.SSH_KEY }}
-       #passphrase: ${{ secrets.PASSPHRASE }} # если ваш ssh-ключ защищен фразой-паролем
+       passphrase: ${{ secrets.PASSPHRASE }} # если ваш ssh-ключ защищен фразой-паролем
        script: |
          sudo docker pull tsaplinale/flask_app_test
          sudo docker stop $(sudo docker ps -a -q)
